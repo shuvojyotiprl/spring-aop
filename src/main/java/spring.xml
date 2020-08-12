@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+   http://www.springframework.org/schema/aop 
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+
+	<!-- bean definition & AOP specific configuration -->
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<bean name="circle"
+		class="com.shuvo.happylearning.aop.model.Circle">
+		<property name="name" value="Shuvo Circle"></property>
+	</bean>
+	
+	<bean name="tringle"
+		class="com.shuvo.happylearning.aop.model.Tringle">
+		<property name="name" value="Toto Tringle"></property>
+	</bean>
+
+	<bean name="shapeservice" class="com.shuvo.happylearning.aop.services.ShapeService" autowire="byName"></bean>
+	
+	<bean name="loggingaspect" class="com.shuvo.happylearning.aop.aspects.LoggingAspect"></bean>
+	
+</beans>
